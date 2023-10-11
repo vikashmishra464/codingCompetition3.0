@@ -29,7 +29,7 @@ void display(node* head){
 }
 node* even_odd(node* &head) {
   if (!head || !head->next) {
-        return head; // No rearrangement needed for lists with 0 or 1 elements
+        return head;
     }
 
     node* evenHead = nullptr;

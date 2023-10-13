@@ -11,20 +11,12 @@ int lis(vector<int> v) {
         if (v[i] > res.back()) {
             res.push_back(v[i]);
         } else {
-            int id = -1;
-            for (int j = 0; j < res.size(); j++) {
-                if (v[i] <= res[j]) {
-                    id = j;
-                    break;
-                }
-            }
-            if (id != -1) {
-                res[id] = v[i];
-            }
-        }
+            int id =lower_bound(res.begin(), res.end(), v[i]) - res.begin();
+            res[id]=v[i];
     }
-
+    }
     return res.size();
+
 }
 
 void display(int arr[],int n){
